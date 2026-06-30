@@ -1,0 +1,29 @@
+{
+"datasource": {
+    "type": "postgresql", 
+    "connection_string": "ENV_DB_CONNECTION_STRING",
+    "table_name": "users",
+    "path": "data/users.csv"
+},
+"statistics": {
+    "columns": [
+    {
+        "name": "age",
+        "metrics": ["median", "std", "min", "max"]
+    },
+    {
+        "name": "salary",
+        "metrics": ["sum", "mean"]
+    }
+    ]
+},
+"output": {
+    "type": "json",
+    "target_path": "result_metrics.csv",
+    "mode": "overwrite",
+    "options": {
+    "include_header": true,
+    "compression": "none"
+    }
+}
+}
